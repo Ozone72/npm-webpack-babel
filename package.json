@@ -4,7 +4,11 @@
   "description": "React setup",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "create": "webpack",
+    "watch": "webpack -w"
+  },
+  "babel": {
+    "presets": ["env", "react"]
   },
   "author": "Orin Fletcher",
   "license": "ISC",
