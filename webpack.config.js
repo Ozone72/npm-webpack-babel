@@ -10,7 +10,7 @@ module.exports = {
   module: {
     rules: [
       { test: /\.(js)$/, use: "babel-loader" },
-      { test: /\.$/, use: ["style-loader", "css-loader"] }
+      { test: /\.css$/, use: ["style-loader", "css-loader"] }
     ]
   },
   plugins: [
@@ -19,5 +19,3 @@ module.exports = {
     })
   ]
 };
-
-module.exports = config;
