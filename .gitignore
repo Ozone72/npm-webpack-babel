@@ -1,3 +1,11 @@
+#ignore node_modules
 /node_modules/
 
+#ignore dist directory
 /dist/
+
+#ignore yarn.lock file
+yarn.lock
+
+#ignore log files
+*.log
