@@ -2,8 +2,10 @@ var React = require('react');
 
 class Popular extends React.Component{
     render(){
-        return {
+        return (
             <div>Popular!</div>
-        }
+        )
     }
 }
+
+module.exports = Popular;
