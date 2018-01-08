@@ -1,4 +1,31 @@
 var React = require('react');
+var PropTypes = require('prop-types');
+
+class SelectLanguage extends React.Component{
+    render(){
+        let languages = ['All', 'JavaScript', 'Ruby', 'Java', 'CSS', 'Python'];
+
+        return(
+            <ul className = 'languages'>
+            {languages.map(function(lang){
+                return (
+                    <li 
+                        style = {lang===this.props.selectedLanguage ? {color: 'red'}:null}
+                        onClick = {this.props.onSelect.bind(null, lang)}
+                        key={lang}>
+                        {lang}
+                    </li>
+                )
+            }, this)}
+        </ul>
+        )
+    }
+}
+
+SelectLanguage.propTypes = {
+    selectedLanguage: PropTypes.string.isRequired,
+    onSelect: PropTypes.func.isRequired
+}
 
 class Popular extends React.Component{
     constructor (props){
@@ -6,7 +33,7 @@ class Popular extends React.Component{
         this.state = {
             selectedLanguage: 'All'
         };
-        // don't quite get the bind thing
+        // don't quite get the bind thing **REVISIT**
         this.updateLanguage = this.updateLanguage.bind(this);
     }
     updateLanguage(lang){
@@ -17,22 +44,13 @@ class Popular extends React.Component{
         });
     }
     render(){
-        let languages = ['All', 'JavaScript', 'Ruby', 'Java', 'CSS', 'Python'];
-        // console.log('Up Here!', this);
         return (
-            <ul className = 'languages'>
-                {languages.map(function(lang){
-                    // console.log('Down Here!', this);
-                    return (
-                        <li 
-                            style = {lang===this.state.selectedLanguage ? {color: 'red'}:null}
-                            onClick = {this.updateLanguage.bind(null, lang)}
-                            key={lang}>
-                            {lang}
-                        </li>
-                    )
-                }, this)}
-            </ul>
+           <div>
+            <SelectLanguage 
+                selectedLanguage = {this.state.selectedLanguage}
+                onSelect = {this.updateLanguage}
+            />
+           </div>
         )
     }
 }
