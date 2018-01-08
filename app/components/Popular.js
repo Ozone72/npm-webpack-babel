@@ -33,7 +33,7 @@ class Popular extends React.Component{
         this.state = {
             selectedLanguage: 'All'
         };
-        // don't quite get the bind thing **REVISIT**
+        // don't quite get the bind thing **REVISIT these videos**
         this.updateLanguage = this.updateLanguage.bind(this);
     }
     updateLanguage(lang){
