@@ -9,3 +9,6 @@ yarn.lock
 
 #ignore log files
 *.log
+
+#ignore systsem files
+.DS_Store
